@@ -536,7 +536,11 @@ body {
 .combo-card.featured .combo-desc .items, .combo-card.featured .combo-desc .save { color: var(--cream); }
 </style>
 <style>
-.bb-logo { display:block; width:150px; height:auto; margin:0 auto 16px; filter: drop-shadow(0 6px 16px rgba(0,0,0,.45)); }
+.bb-logo { display:block; width:150px; height:auto; margin:0 auto 16px; background:#FAF7F1; border:1px solid rgba(201,169,110,.55); border-radius:16px; padding:8px 14px; box-sizing:content-box; box-shadow:0 8px 22px rgba(0,0,0,.35); }
+@media (max-width:520px){ .bb-logo { width:118px; padding:6px 10px; margin-bottom:12px; } }
+html { overflow-x: hidden; }
+#combos { padding: 0 16px; box-sizing: border-box; }
+.tab-nav-scroll { overscroll-behavior-x: contain; scroll-snap-type: none; }
 </style>
 </head>
 <body>

@@ -1,26 +1,809 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DOUBLE B — المنيو قيد التحديث</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0F2A1F">
+<title>DOUBLE B · المنيو الرسمي</title>
+<meta name="description" content="منيو Double B الرسمي · قهوة مختصة · أبها · خدمة الدرايف-ثرو">
+
+<!-- Open Graph for WhatsApp/social shares -->
+<meta property="og:title" content="DOUBLE B · المنيو الكامل">
+<meta property="og:description" content="قهوة فاخرة · في متناول الجميع">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,wght@1,500;1,600&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-  html,body{margin:0;height:100%}
-  body{font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
-       background:#f5efe7;color:#2b2320;display:flex;align-items:center;justify-content:center;text-align:center}
-  .wrap{padding:32px}
-  .logo{width:min(320px,60vw);margin:0 auto 24px;display:block}
-  h1{font-size:clamp(20px,3.2vw,30px);margin:0 0 10px;font-weight:800;letter-spacing:.2px}
-  p{font-size:clamp(14px,2.2vw,17px);margin:6px 0;color:#6b5f57}
-  .dot{width:10px;height:10px;border-radius:50%;background:#c8a24a;display:inline-block;margin:0 6px;vertical-align:middle}
+/* ============ DESIGN TOKENS ============ */
+:root {
+  --green: #0F2A1F;
+  --green-2: #163A2A;
+  --green-3: #1E4A35;
+  --green-deep: #081A11;
+  --gold: #C9A96E;
+  --gold-soft: #E8D5A8;
+  --gold-deep: #A88450;
+  --gold-bright: #D4B97A;
+  --cream: #FAF6EB;
+  --cream-2: #F2EBD8;
+  --cream-3: #ECE4CD;
+  --ink: #1A1A1A;
+  --ink-soft: #4A5C53;
+  --line: rgba(201, 169, 110, 0.25);
+  --red: #B23A48;
+  --orange: #D4844A;
+  --shadow-sm: 0 2px 8px rgba(8, 26, 17, 0.08);
+  --shadow-md: 0 4px 16px rgba(8, 26, 17, 0.12);
+  --shadow-lg: 0 8px 32px rgba(8, 26, 17, 0.16);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  font-family: 'Tajawal', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--green);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ HERO HEADER ============ */
+.hero {
+  background:
+    radial-gradient(ellipse at top, rgba(201, 169, 110, 0.18) 0%, transparent 60%),
+    linear-gradient(180deg, var(--green-deep) 0%, var(--green) 100%);
+  color: var(--cream);
+  padding: 32px 20px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before, .hero::after {
+  content: '';
+  position: absolute;
+  width: 30px; height: 30px;
+  border: 1px solid var(--gold);
+  opacity: 0.5;
+}
+.hero::before { top: 12px; right: 12px; border-bottom: none; border-left: none; }
+.hero::after  { top: 12px; left: 12px; border-bottom: none; border-right: none; }
+
+.bb-monogram {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 2px solid var(--gold);
+  margin: 0 auto 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--green);
+  letter-spacing: 2px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.brand-super {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.brand-super .dash { color: var(--gold-bright); margin: 0 6px; }
+.brand-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  letter-spacing: 4px;
+  line-height: 1;
+  color: var(--cream);
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.brand-tagline-en {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gold-soft);
+  margin-top: 6px;
+}
+.brand-tagline-ar {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold-bright);
+  margin-top: 2px;
+}
+.hero-meta {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(201, 169, 110, 0.3);
+  display: flex; align-items: center; justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--gold-bright);
+  font-family: 'Bebas Neue', sans-serif;
+}
+.hero-meta .dot { color: var(--gold); }
+
+/* ============ STICKY TAB NAV ============ */
+.tab-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 10px 0;
+  box-shadow: var(--shadow-sm);
+}
+.tab-nav-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 16px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+.tab-nav-scroll::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex-shrink: 0;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  border-radius: 50px;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--green);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  scroll-snap-align: start;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.tab-btn .emoji { font-size: 16px; }
+.tab-btn:hover, .tab-btn.active {
+  background: var(--green);
+  color: var(--gold);
+  border-color: var(--green);
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  padding: 28px 16px 8px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 18px;
+  position: relative;
+}
+.section-head .ar {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 900;
+  font-size: 26px;
+  color: var(--green);
+  line-height: 1;
+}
+.section-head .star { color: var(--gold); margin: 0 8px; font-size: 18px; }
+.section-head .en {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--gold-deep);
+  margin-top: 6px;
+}
+.section-head::after {
+  content: '';
+  display: block;
+  width: 50px; height: 1px;
+  background: var(--gold);
+  margin: 12px auto 0;
+}
+
+/* ============ PRODUCT CARDS ============ */
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.product {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product.bestseller {
+  border: 1.5px solid var(--gold);
+}
+.product.bestseller::before {
+  content: '★ الأكثر مبيعاً';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--gold);
+  color: var(--green);
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  z-index: 2;
+  box-shadow: var(--shadow-sm);
+}
+.product:active { transform: scale(0.98); }
+.product-img {
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: var(--cream-2);
+  position: relative;
+}
+.product-img.placeholder {
+  background: linear-gradient(135deg, var(--green-2) 0%, var(--green-3) 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.product-img.placeholder::after {
+  content: 'BB';
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--gold);
+  letter-spacing: 3px;
+  opacity: 0.5;
+}
+.product-info {
+  padding: 14px 14px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+.product-name-ar {
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--green);
+  line-height: 1.1;
+}
+.product-name-en {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1;
+}
+.product-desc {
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+.product-price-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.price-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  background: var(--cream-2);
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.price-pill .size {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--gold-deep);
+  margin-right: 4px;
+}
+.price-pill .amt {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  color: var(--green);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.price-pill .sar {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold-deep);
+}
+.price-pill.single {
+  background: var(--green);
+}
+.price-pill.single .amt { color: var(--gold); }
+.price-pill.single .sar { color: var(--gold-soft); }
+
+/* ============ COMBO SECTION ============ */
+.combos-banner {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-3) 100%);
+  margin: 32px -16px 0;
+  padding: 32px 20px 24px;
+  color: var(--cream);
+  text-align: center;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  position: relative;
+}
+.combos-banner::before, .combos-banner::after {
+  content: '✦';
+  color: var(--gold);
+  font-size: 20px;
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+}
+.combos-banner::before { right: 24px; }
+.combos-banner::after  { left: 24px; }
+.combos-banner .ar {
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 1.1;
+}
+.combos-banner .en {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-top: 6px;
+}
+.combo-list {
+  background: var(--green);
+  padding: 18px 16px;
+  display: flex; flex-direction: column; gap: 10px;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  margin: 0 -16px 24px;
+}
+.combo-card {
+  background: rgba(250, 246, 235, 0.06);
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+.combo-card.featured {
+  background: linear-gradient(90deg, var(--red) 0%, rgba(178, 58, 72, 0.9) 100%);
+  border-color: var(--gold);
+}
+.combo-num {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--green);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+.combo-card.featured .combo-num { background: var(--cream); color: var(--red); }
+.combo-desc { color: var(--cream); }
+.combo-desc .ar {
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1.15;
+}
+.combo-desc .en {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 11px;
+  color: var(--gold-soft);
+  margin-top: 2px;
+  line-height: 1;
+}
+.combo-card.featured .combo-desc .en { color: var(--cream); }
+.combo-price {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 6px 10px;
+  display: flex; align-items: baseline; gap: 3px;
+}
+.combo-card.featured .combo-price { background: var(--gold); }
+.combo-price .amt {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--green);
+  line-height: 1;
+}
+.combo-card.featured .combo-price .amt { color: var(--green-deep); }
+.combo-price .sar {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--gold-deep);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--green-deep);
+  color: var(--cream);
+  padding: 32px 20px 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+.footer-tagline {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--gold-soft);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.footer-divider {
+  width: 40px; height: 1px;
+  background: var(--gold);
+  margin: 16px auto;
+}
+.footer-info {
+  font-size: 12px;
+  color: var(--gold-bright);
+  line-height: 1.6;
+}
+.footer-info .row {
+  margin-bottom: 6px;
+}
+.footer-payments {
+  display: flex; justify-content: center; gap: 8px;
+  margin: 14px 0;
+  flex-wrap: wrap;
+}
+.pay-mini {
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 5px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+.footer-credits {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(201, 169, 110, 0.25);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--gold);
+}
+
+/* ============ RESPONSIVE: TABLET + ============ */
+@media (min-width: 640px) {
+  .section { max-width: 720px; }
+  .products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
+@media (min-width: 960px) {
+  .section { max-width: 1100px; }
+  .products { grid-template-columns: 1fr 1fr 1fr; }
+  .hero { padding: 50px 20px 36px; }
+  .brand-title { font-size: 80px; }
+  .bb-monogram { width: 80px; height: 80px; font-size: 40px; }
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.product { animation: fadeUp 0.4s ease backwards; }
+.product:nth-child(1) { animation-delay: 0.05s; }
+.product:nth-child(2) { animation-delay: 0.1s; }
+.product:nth-child(3) { animation-delay: 0.15s; }
+.product:nth-child(4) { animation-delay: 0.2s; }
+.product:nth-child(5) { animation-delay: 0.25s; }
+
+/* Reduce motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.product.newitem::before {
+  content: '✧ جديد';
+  position: absolute; top: 8px; left: 8px;
+  background: var(--green); color: var(--gold);
+  font-size: 9px; font-weight: 800; padding: 3px 8px;
+  border-radius: 10px; letter-spacing: 0.5px; z-index: 2;
+  box-shadow: var(--shadow-sm);
+}
+.combo-desc .items { font-size: 11px; color: var(--gold-soft); margin-top: 2px; line-height: 1.35; }
+.combo-desc .save { font-size: 10px; font-weight: 800; color: var(--gold-bright); margin-top: 3px; }
+.combo-card.featured .combo-desc .items, .combo-card.featured .combo-desc .save { color: var(--cream); }
+</style>
+<style>
+.bb-logo { display:block; width:150px; height:auto; margin:0 auto 16px; background:#FAF7F1; border:1px solid rgba(201,169,110,.55); border-radius:16px; padding:8px 14px; box-sizing:content-box; box-shadow:0 8px 22px rgba(0,0,0,.35); }
+@media (max-width:520px){ .bb-logo { width:118px; padding:6px 10px; margin-bottom:12px; } }
+html { overflow-x: hidden; }
+#combos { padding: 0 16px; box-sizing: border-box; }
+.tab-nav-scroll { overscroll-behavior-x: contain; scroll-snap-type: none; }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <img class="logo" src="assets/logo-bb.png" alt="DOUBLE B">
-    <h1>منيو قهوة اليوم <span class="dot"></span> قيد التحديث</h1>
-    <p>نعمل حاليًا على تحديث صور المنيو بهوية موحّدة</p>
-    <p>ونعود إليكم قريبًا بإذن الله — DOUBLE B Cafe</p>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <img class="bb-logo" src="assets/logo-bb.png" alt="DOUBLE B" width="150" height="81">
+  <div class="brand-super">— SPECIALTY <span class="dash">·</span> COFFEE <span class="dash">·</span> 2026 —</div>
+  <h1 class="brand-title">DOUBLE B</h1>
+  <div class="brand-tagline-en">Premium coffee, within everyone's reach</div>
+  <div class="brand-tagline-ar">قهوة فاخرة · في متناول الجميع</div>
+  <div class="hero-meta">
+    <span>ABHA</span>
+    <span class="dot">·</span>
+    <span>DRIVE-THRU</span>
+    <span class="dot">·</span>
+    <span>EST. 2026</span>
   </div>
+</header>
+
+<nav class="tab-nav">
+  <div class="tab-nav-scroll">
+    <a href="#bakery" class="tab-btn"><span class="emoji">🍰</span> المخبوزات</a>
+    <a href="#hot" class="tab-btn"><span class="emoji">☕</span> الساخنة</a>
+    <a href="#tea" class="tab-btn"><span class="emoji">🍵</span> الشاي والماتشا</a>
+    <a href="#iced" class="tab-btn"><span class="emoji">❄️</span> الباردة</a>
+    <a href="#mojito" class="tab-btn"><span class="emoji">🍹</span> موهيتو ومنعشات</a>
+    <a href="#specialty" class="tab-btn"><span class="emoji">✦</span> المختصة</a>
+    <a href="#combos" class="tab-btn"><span class="emoji">🎁</span> الكومبوهات</a>
+  </div>
+</nav>
+
+<section id="bakery" class="section">
+  <div class="section-head">
+    <div class="ar"><span class="star">✦</span>المخبوزات والحلويات<span class="star">✦</span></div>
+    <div class="en">BAKERY & SWEETS</div>
+  </div>
+  <div class="products" data-sec="bakery"></div>
+</section>
+
+<section id="hot" class="section">
+  <div class="section-head">
+    <div class="ar"><span class="star">✦</span>المشروبات الساخنة<span class="star">✦</span></div>
+    <div class="en">HOT COFFEE</div>
+  </div>
+  <div class="products" data-sec="hot"></div>
+</section>
+
+<section id="tea" class="section">
+  <div class="section-head">
+    <div class="ar"><span class="star">✦</span>الشاي والماتشا<span class="star">✦</span></div>
+    <div class="en">TEA & MATCHA</div>
+  </div>
+  <div class="products" data-sec="tea"></div>
+</section>
+
+<section id="iced" class="section">
+  <div class="section-head">
+    <div class="ar"><span class="star">✦</span>المشروبات الباردة<span class="star">✦</span></div>
+    <div class="en">ICED COFFEE</div>
+  </div>
+  <div class="products" data-sec="iced"></div>
+</section>
+
+<section id="mojito" class="section">
+  <div class="section-head">
+    <div class="ar"><span class="star">✦</span>موهيتو ومنعشات<span class="star">✦</span></div>
+    <div class="en">MOJITO & REFRESHERS</div>
+  </div>
+  <div class="products" data-sec="mojito"></div>
+</section>
+
+<section id="specialty" class="section">
+  <div class="section-head">
+    <div class="ar"><span class="star">✦</span>المختصة<span class="star">✦</span></div>
+    <div class="en">SPECIALTY</div>
+  </div>
+  <div class="products" data-sec="specialty"></div>
+</section>
+
+<section id="combos">
+  <div class="combos-banner">
+    <div class="ar">كومبوهات اللمة</div>
+    <div class="en">SIGNATURE COMBOS · SAVE MORE</div>
+  </div>
+  <div class="combo-list" id="comboList"></div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-tagline">"Premium coffee, accessible to all"</div>
+  <div style="font-size:14px;font-weight:700;color:var(--gold-bright);">قهوة فاخرة · في متناول الجميع</div>
+  <div class="footer-divider"></div>
+  <div class="footer-info">
+    <div class="row">📍 أبها · المملكة العربية السعودية</div>
+    <div class="row">🚗 خدمة الدرايف-ثرو</div>
+    <div class="row">⏰ مفتوح يومياً</div>
+  </div>
+  <div class="footer-payments">
+    <span class="pay-mini">MADA</span>
+    <span class="pay-mini">VISA</span>
+    <span class="pay-mini">MASTERCARD</span>
+    <span class="pay-mini">AMEX</span>
+  </div>
+  <div class="footer-credits">DOUBLE B · DRIVE-THRU · EST. 2026</div>
+</footer>
+
+<script>
+  // Active tab highlight on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const tabs = document.querySelectorAll('.tab-btn');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tabs.forEach(tab => {
+          tab.classList.toggle('active', tab.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-50% 0px -50% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+
+<style>
+/* Items without a photo get a clean full-width text card instead of a
+   repeated BB monogram block - 45 of 63 items have no photo, and the
+   repeated logo read as visual noise across the menu. */
+.product.noimg { grid-template-columns: 1fr; }
+.product.noimg .product-info { padding: 14px 16px; }
+</style>
+<script>
+/* ===================================================================
+   DOUBLE B - menu renderer
+   Data lives in two Google Sheets so the shop can edit it without code.
+   Each sheet is read from its FIRST tab (gid=0), so tab names don't matter.
+   Blank out an id to fall back to the copy embedded below.
+   =================================================================== */
+const MENU_SHEET   = "";   // static build: no live sheet
+const COMBOS_SHEET = "";   // static build: no live sheet
+const IMG_BASE = "assets/img/";
+const FALLBACK = {"sections": [{"id": "bakery", "ar": "المخبوزات والحلويات", "en": "BAKERY & SWEETS"}, {"id": "hot", "ar": "المشروبات الساخنة", "en": "HOT COFFEE"}, {"id": "tea", "ar": "الشاي والماتشا", "en": "TEA & MATCHA"}, {"id": "iced", "ar": "المشروبات الباردة", "en": "ICED COFFEE"}, {"id": "mojito", "ar": "موهيتو ومنعشات", "en": "MOJITO & REFRESHERS"}, {"id": "specialty", "ar": "المختصة", "en": "SPECIALTY"}], "items": [{"sec": "bakery", "ar": "كوكيز فاخر", "en": "Premium Cookie", "desc": "كوكي شوكولاتة بمذاق فاخر مع ملح البحر", "img": "premium-cookie.webp", "badge": "bestseller", "prices": [{"size": "", "amt": "8"}]}, {"sec": "bakery", "ar": "كوكيز دبل شوكلت", "en": "Double Chocolate Cookies", "desc": "كوكيز غني بالشوكولاتة الداكنة والحليب", "img": "1-double-chocolate-cookie-restored.webp", "badge": "new", "prices": [{"size": "", "amt": "11"}]}, {"sec": "bakery", "ar": "كوكيز بايتس", "en": "Cookie Bites", "desc": "قطع كوكيز صغيرة مثالية للمشاركة", "img": "cookie-bites.webp", "badge": "new", "prices": [{"size": "", "amt": "9.99"}]}, {"sec": "bakery", "ar": "كوكيز ميني", "en": "Mini Cookies", "desc": "كوكيز ميني بحجم لقمة", "img": "mini-cookies.webp", "badge": "new", "prices": [{"size": "", "amt": "6.99"}]}, {"sec": "bakery", "ar": "بودينق شوكلت", "en": "Chocolate Pudding", "desc": "طبقات كريمية مع الشوكولاتة الفاخرة", "img": "1-chocolate-pudding-restored.webp", "badge": "bestseller", "prices": [{"size": "", "amt": "13"}]}, {"sec": "bakery", "ar": "بودينق بيكان", "en": "Pecan Pudding", "desc": "بودينق كريمي مع البيكان المحمّص", "img": "pecan-pudding.webp", "badge": "", "prices": [{"size": "", "amt": "13"}]}, {"sec": "bakery", "ar": "كرواسون جبنة بيضاء", "en": "White Cheese Croissant", "desc": "كرواسون فرنسي طازج محشو جبنة بيضاء", "img": "bakery-6e7ad3.webp", "badge": "new", "prices": [{"size": "", "amt": "10.99"}]}, {"sec": "bakery", "ar": "كرواسون جبنة صفراء", "en": "Yellow Cheese Croissant", "desc": "كرواسون فرنسي طازج محشو جبنة صفراء", "img": "cheese-croissant.webp", "badge": "new", "prices": [{"size": "", "amt": "10.99"}]}, {"sec": "bakery", "ar": "تشيز كيك مدريد", "en": "Madrid Cheesecake", "desc": "تشيز كيك إسباني محروق بقوام كريمي", "img": "1-madrid-cheesecake.webp", "badge": "new", "prices": [{"size": "", "amt": "15"}]}, {"sec": "bakery", "ar": "دولتشي كندر", "en": "Dolce Kinder", "desc": "حلا دولتشي بنكهة كندر", "img": "dulce-kinder.webp", "badge": "", "prices": [{"size": "", "amt": "15"}]}, {"sec": "bakery", "ar": "دولتشي بيكان", "en": "Dolce Pecan", "desc": "حلا دولتشي بالبيكان", "img": "1-dolce-pecan-menu.webp", "badge": "", "prices": [{"size": "", "amt": "15"}]}, {"sec": "bakery", "ar": "تيراميسو", "en": "Tiramisu", "desc": "تيراميسو طبقات قهوة وكريمة", "img": "1-tiramisu-menu.webp", "badge": "", "prices": [{"size": "", "amt": "13"}]}, {"sec": "bakery", "ar": "حلا البيبسي", "en": "Pepsi Dessert", "desc": "حلا البيبسي", "img": "1-pepsi-dessert-menu.webp", "badge": "", "prices": [{"size": "", "amt": "10"}]}, {"sec": "hot", "ar": "قهوة اليوم", "en": "Coffee of the Day", "desc": "قهوة فلتر يومية بنكهة محصول مختار", "img": "coffee-of-the-day.webp", "badge": "bestseller", "prices": [{"size": "S", "amt": "7"}, {"size": "L", "amt": "9"}]}, {"sec": "hot", "ar": "أمريكانو", "en": "Americano", "desc": "إسبريسو ساخن مع ماء مغلي", "img": "americano.webp", "badge": "", "prices": [{"size": "S", "amt": "8"}, {"size": "L", "amt": "10"}]}, {"sec": "hot", "ar": "اسبريسو", "en": "Espresso", "desc": "جرعة إسبريسو فاخرة بكريمة ذهبية", "img": "hot-ab5f53.webp", "badge": "new", "prices": [{"size": "", "amt": "6"}]}, {"sec": "hot", "ar": "لاتيه", "en": "BB Latte", "desc": "إسبريسو فاخر مع حليب مخفوق ناعم", "img": "bb-latte.webp", "badge": "", "prices": [{"size": "S", "amt": "11"}, {"size": "L", "amt": "14"}]}, {"sec": "hot", "ar": "كابتشينو", "en": "Cappuccino", "desc": "إسبريسو مع رغوة كثيفة وقرفة", "img": "cappuccino.webp", "badge": "", "prices": [{"size": "S", "amt": "11"}, {"size": "L", "amt": "14"}]}, {"sec": "hot", "ar": "فلات وايت", "en": "Flat White", "desc": "طبقة رقيقة من رغوة الحليب على إسبريسو دبل", "img": "flat-white.webp", "badge": "", "prices": [{"size": "", "amt": "11"}]}, {"sec": "hot", "ar": "كورتادو", "en": "Cortado", "desc": "إسبريسو مع حليب مبخّر بنسب متساوية", "img": "cortado.webp", "badge": "new", "prices": [{"size": "", "amt": "10"}]}, {"sec": "hot", "ar": "ميكاتو", "en": "Macchiato", "desc": "إسبريسو مع لمسة رغوة حليب", "img": "macchiato.webp", "badge": "new", "prices": [{"size": "", "amt": "9"}]}, {"sec": "hot", "ar": "موكا", "en": "Mocha", "desc": "إسبريسو مع شوكولاتة وحليب مخفوق", "img": "mocha.webp", "badge": "", "prices": [{"size": "S", "amt": "12"}, {"size": "L", "amt": "15"}]}, {"sec": "hot", "ar": "وايت موكا", "en": "White Mocha", "desc": "إسبريسو مع شوكولاتة بيضاء وحليب", "img": "white-mocha.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "hot", "ar": "سبانش لاتيه", "en": "Spanish Latte", "desc": "طبقات من الحليب المحلى مع إسبريسو", "img": "spanish-latte.webp", "badge": "", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "hot", "ar": "كراميل ميكاتو", "en": "Caramel Macchiato", "desc": "حليب مخفوق مع إسبريسو وصوص كراميل", "img": "caramel-macchiato.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "hot", "ar": "بستاشيو لاتيه", "en": "Pistachio Latte", "desc": "لاتيه بنكهة الفستق الفاخر", "img": "pistachio-latte.webp", "badge": "new", "prices": [{"size": "S", "amt": "14"}, {"size": "L", "amt": "17"}]}, {"sec": "hot", "ar": "كوفي توفي", "en": "Coffee Toffee", "desc": "لاتيه بنكهة التوفي الغنية", "img": "toffee-coffee.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "hot", "ar": "هوت شوكلت", "en": "Hot Chocolate", "desc": "شوكولاتة ساخنة كريمية", "img": "1-hot-chocolate-menu.webp", "badge": "new", "prices": [{"size": "S", "amt": "12"}, {"size": "L", "amt": "14"}]}, {"sec": "hot", "ar": "قهوة فرنسية", "en": "French Coffee", "desc": "قهوة فرنسية بالحليب والبندق", "img": "french-coffee.webp", "badge": "new", "prices": [{"size": "", "amt": "10"}]}, {"sec": "hot", "ar": "قهوة تركي", "en": "Turkish Coffee", "desc": "قهوة تركية على الأصول", "img": "1-turkish-coffee-menu.webp", "badge": "new", "prices": [{"size": "", "amt": "8"}]}, {"sec": "hot", "ar": "قهوة تركي بالحليب", "en": "Turkish Coffee w/ Milk", "desc": "قهوة تركية ناعمة بالحليب", "img": "1-turkish-coffee-milk-menu.webp", "badge": "new", "prices": [{"size": "", "amt": "9"}]}, {"sec": "hot", "ar": "قهوة عربية", "en": "Arabic Coffee", "desc": "قهوة عربية بالهيل والزعفران", "img": "1-arabic-coffee-menu.webp", "badge": "new", "prices": [{"size": "", "amt": "8"}]}, {"sec": "hot", "ar": "قهوة ايطالية", "en": "Italian Coffee", "desc": "قهوة إيطالية غنية ومركزة", "img": "italian-coffee.webp", "badge": "new", "prices": [{"size": "", "amt": "10"}]}, {"sec": "hot", "ar": "نسكافيه", "en": "Nescafe", "desc": "نسكافيه كلاسيكي أو بالحليب", "img": "nescafe.webp", "badge": "new", "prices": [{"size": "", "amt": "8"}]}, {"sec": "hot", "ar": "سحلب", "en": "Sahlab", "desc": "سحلب دافئ كريمي بالمكسرات والقرفة", "img": "1-sahlab-menu.webp", "badge": "new", "prices": [{"size": "", "amt": "12"}]}, {"sec": "tea", "ar": "ماتشا لاتيه ساخن", "en": "Hot Matcha Latte", "desc": "ماتشا دافئ مع حليب مخفوق", "img": "hot-matcha-latte.webp", "badge": "", "prices": [{"size": "S", "amt": "14"}, {"size": "L", "amt": "17"}]}, {"sec": "tea", "ar": "آيس ماتشا", "en": "Iced Matcha", "desc": "ماتشا ياباني فاخر مع حليب مثلج", "img": "iced-matcha-latte.webp", "badge": "", "prices": [{"size": "S", "amt": "14"}, {"size": "L", "amt": "17"}]}, {"sec": "tea", "ar": "آيس ماتشا لافندر", "en": "Iced Matcha Lavender", "desc": "ماتشا مثلج بلمسة لافندر", "img": "1-iced-matcha-lavender-menu.webp", "badge": "new", "prices": [{"size": "", "amt": "18"}]}, {"sec": "tea", "ar": "شاي كرك", "en": "Karak Tea", "desc": "شاي كرك بالحليب والهيل", "img": "karak-tea.webp", "badge": "new", "prices": [{"size": "", "amt": "4"}]}, {"sec": "tea", "ar": "شاي مغربي", "en": "Moroccan Tea", "desc": "شاي أخضر مغربي بالنعناع", "img": "moroccan-tea.webp", "badge": "new", "prices": [{"size": "", "amt": "8"}]}, {"sec": "tea", "ar": "شاي انجليزي أحمر", "en": "English Red Tea", "desc": "شاي أحمر إنجليزي فاخر", "img": "english-red-tea.webp", "badge": "new", "prices": [{"size": "", "amt": "5"}]}, {"sec": "tea", "ar": "شاي انجليزي أخضر", "en": "English Green Tea", "desc": "شاي أخضر إنجليزي منعش", "img": "english-green-tea.webp", "badge": "new", "prices": [{"size": "", "amt": "5"}]}, {"sec": "tea", "ar": "شاي ربيع", "en": "Rabea Tea", "desc": "شاي ربيع كلاسيكي", "img": "spring-tea.webp", "badge": "new", "prices": [{"size": "", "amt": "2"}]}, {"sec": "tea", "ar": "شاي الكبوس", "en": "Kabous Tea", "desc": "شاي الكبوس الأصيل", "img": "kabous-tea.webp", "badge": "new", "prices": [{"size": "", "amt": "2"}]}, {"sec": "tea", "ar": "شاي ايطالي", "en": "Italian Tea", "desc": "شاي إيطالي بنكهات مميزة", "img": "italian-tea.webp", "badge": "new", "prices": [{"size": "", "amt": "6"}]}, {"sec": "tea", "ar": "آيس تي خوخ", "en": "Peach Ice Tea", "desc": "شاي مثلج منعش بنكهة الخوخ", "img": "peach-iced-tea.webp", "badge": "new", "prices": [{"size": "S", "amt": "9"}, {"size": "L", "amt": "12"}]}, {"sec": "iced", "ar": "آيس أمريكانو", "en": "Iced Americano", "desc": "إسبريسو دبل مع ماء مثلج", "img": "iced-americano.webp", "badge": "", "prices": [{"size": "S", "amt": "8"}, {"size": "L", "amt": "10"}]}, {"sec": "iced", "ar": "آيس فريدو", "en": "Espresso Freddo", "desc": "إسبريسو مخفوق مثلج على الطريقة اليونانية", "img": "espresso-freddo.webp", "badge": "new", "prices": [{"size": "", "amt": "12"}]}, {"sec": "iced", "ar": "آيس قهوة اليوم", "en": "Iced Coffee of the Day", "desc": "قهوة اليوم مقدمة باردة مع الثلج", "img": "iced-today-coffee.webp", "badge": "new", "prices": [{"size": "S", "amt": "8"}, {"size": "L", "amt": "10"}]}, {"sec": "iced", "ar": "آيس لاتيه", "en": "Iced Latte", "desc": "إسبريسو مع حليب بارد وثلج", "img": "iced-latte.webp", "badge": "new", "prices": [{"size": "S", "amt": "11"}, {"size": "L", "amt": "14"}]}, {"sec": "iced", "ar": "آيس سبانش لاتيه", "en": "Iced Spanish Latte", "desc": "سبانش لاتيه منعش مع الثلج", "img": "1-iced-spanish-latte-menu.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "iced", "ar": "آيس موكا", "en": "Iced Mocha", "desc": "موكا باردة بالشوكولاتة", "img": "1-iced-mocha-menu.webp", "badge": "new", "prices": [{"size": "S", "amt": "12"}, {"size": "L", "amt": "15"}]}, {"sec": "iced", "ar": "آيس وايت موكا", "en": "Iced White Mocha", "desc": "وايت موكا باردة كريمية", "img": "1-iced-white-mocha-menu.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "iced", "ar": "آيس توفي لاتيه", "en": "Iced Toffee Latte", "desc": "لاتيه مثلج بنكهة التوفي", "img": "iced-toffee-latte.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "iced", "ar": "آيس كراميل ميكاتو", "en": "Iced Caramel Macchiato", "desc": "كراميل ميكاتو بارد بطبقات جذابة", "img": "1-iced-caramel-macchiato-menu.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "iced", "ar": "آيس كراميل لاتيه", "en": "Iced Caramel Latte", "desc": "لاتيه مثلج بصوص الكراميل", "img": "iced-caramel-latte.webp", "badge": "new", "prices": [{"size": "S", "amt": "13"}, {"size": "L", "amt": "16"}]}, {"sec": "iced", "ar": "آيس كراميل فرابتشينو", "en": "Iced Caramel Frappuccino", "desc": "فرابتشينو مخفوق بالكراميل والكريمة", "img": "iced-caramel-frapp.webp", "badge": "new", "prices": [{"size": "S", "amt": "15"}, {"size": "L", "amt": "18"}]}, {"sec": "iced", "ar": "ماء", "en": "Water", "desc": "مياه معدنية", "img": "water.webp", "badge": "new", "prices": [{"size": "", "amt": "2"}]}, {"sec": "mojito", "ar": "آيس كركديه", "en": "Iced Karkadeh", "desc": "شراب الكركديه المنعش بطبقات الفواكه", "img": "iced-karkadeh.webp", "badge": "bestseller", "prices": [{"size": "S", "amt": "8"}, {"size": "L", "amt": "11"}]}, {"sec": "mojito", "ar": "موهيتو فراولة", "en": "Strawberry Mojito", "desc": "موهيتو منعش بالفراولة والنعناع", "img": "strawberry-mojito.webp", "badge": "new", "prices": [{"size": "", "amt": "13"}]}, {"sec": "mojito", "ar": "موهيتو خوخ", "en": "Peach Mojito", "desc": "موهيتو منعش بالخوخ والنعناع", "img": "peach-mojito.webp", "badge": "new", "prices": [{"size": "", "amt": "13"}]}, {"sec": "mojito", "ar": "موهيتو بطيخ", "en": "Watermelon Mojito", "desc": "موهيتو صيفي بالبطيخ", "img": "watermelon-mojito.webp", "badge": "new", "prices": [{"size": "", "amt": "13"}]}, {"sec": "mojito", "ar": "موهيتو توت أزرق", "en": "Blueberry Mojito", "desc": "موهيتو بالتوت الأزرق", "img": "blueberry-mojito.webp", "badge": "new", "prices": [{"size": "", "amt": "13"}]}, {"sec": "mojito", "ar": "موهيتو توت أسود", "en": "Blackberry Mojito", "desc": "موهيتو بالتوت الأسود", "img": "blackberry-mojito.webp", "badge": "new", "prices": [{"size": "", "amt": "13"}]}, {"sec": "mojito", "ar": "موهيتو ميكس", "en": "Mojito Mix", "desc": "مزيج نكهات الموهيتو", "img": "mixed-mojito.webp", "badge": "new", "prices": [{"size": "", "amt": "14"}]}, {"sec": "specialty", "ar": "في 60 بور أوفر", "en": "V60 Pour-Over", "desc": "قهوة مختصة محضّرة يدوياً بطريقة V60", "img": "v60-pour-over.webp", "badge": "bestseller", "prices": [{"size": "", "amt": "15"}]}, {"sec": "specialty", "ar": "آيس في 60", "en": "Iced V60", "desc": "قهوة مختصة باردة بطريقة V60 مع الثلج", "img": "iced-v60.webp", "badge": "bestseller", "prices": [{"size": "", "amt": "15"}]}, {"sec": "bakery", "ar": "كرواسون", "en": "Croissant", "desc": "كرواسون فرنسي طازج بطبقات الزبدة", "img": "croissant.webp", "badge": "", "prices": [{"size": "", "amt": "8"}]}, {"sec": "bakery", "ar": "سان سيباستيان", "en": "San Sebastian", "desc": "تشيز كيك إسباني محروق بقوام كريمي", "img": "san-sebastian.webp", "badge": "bestseller", "prices": [{"size": "", "amt": "18"}]}, {"sec": "bakery", "ar": "دوناتس", "en": "Donut", "desc": "دوناتس طازج بنكهة متغيرة يومياً", "img": "donut.webp", "badge": "", "prices": [{"size": "", "amt": "8"}]}, {"sec": "bakery", "ar": "علبة كوكيز BB", "en": "BB Cookie Box", "desc": "4 قطع كوكي فاخر بشعار Double B", "img": "bb-cookie-box.webp", "badge": "", "prices": [{"size": "", "amt": "35"}]}, {"sec": "hot", "ar": "إسبريسو دبل", "en": "Double Espresso", "desc": "جرعتين من الإسبريسو الفاخر بكريمة ذهبية", "img": "double-espresso.webp", "badge": "", "prices": [{"size": "", "amt": "8"}]}, {"sec": "hot", "ar": "كركديه ساخن", "en": "Hot Karkadeh", "desc": "شاي الكركديه الدافئ مع لمسة قرفة", "img": "hot-karkadeh.webp", "badge": "", "prices": [{"size": "S", "amt": "8"}, {"size": "L", "amt": "11"}]}, {"sec": "hot", "ar": "إسبريسو ألفريدو", "en": "Espresso Alfredo", "desc": "إسبريسو مع حليب مكثف محلى", "img": "espresso-alfredo-menu.webp", "badge": "new", "prices": [{"size": "S", "amt": "12"}, {"size": "L", "amt": "14"}]}, {"sec": "iced", "ar": "مشروبات الطاقة", "en": "Energy Drinks", "desc": "مشروب طاقة منعش مثلج", "img": "energy-drink-menu.webp", "badge": "new", "prices": [{"size": "S", "amt": "10"}, {"size": "L", "amt": "15"}]}], "combos": [{"num": "1", "name": "كومبو الدبل", "items": "2× قهوة اليوم كبير + كوكيز فاخر", "save": "وفّر 4.01 ر.س", "price": "21.99", "featured": false}, {"num": "2", "name": "كومبو اللمة الصغيرة", "items": "2× قهوة اليوم كبير + كوكيز فاخر + بودينق شوكلت", "save": "وفّر 7 ر.س", "price": "33.99", "featured": false}, {"num": "3", "name": "كومبو الجمعة 3×3 ★", "items": "3× قهوة اليوم كبير + 3× كوكيز فاخر", "save": "وفّر 9.01 ر.س", "price": "41.99", "featured": true}, {"num": "4", "name": "كومبو الديوانية", "items": "4× قهوة اليوم كبير + كوكيز بايتس + دبل شوكلت + بودينق بيكان", "save": "وفّر 12.98 ر.س", "price": "57.99", "featured": false}, {"num": "5", "name": "كومبو الطلعة", "items": "3× موهيتو أي نكهة + كوكيز بايتس", "save": "وفّر 9 ر.س", "price": "39.99", "featured": false}, {"num": "6", "name": "كومبو الكرك", "items": "4× شاي كرك + كوكيز ميني", "save": "وفّر 4 ر.س", "price": "18.99", "featured": false}, {"num": "7", "name": "كومبو الضيافة", "items": "2× سبانش لاتيه كبير + تشيز كيك مدريد + كوكيز فاخر", "save": "وفّر 10 ر.س", "price": "46.99", "featured": false}, {"num": "8", "name": "دبل في 60", "items": "2× في 60 حار أو آيس", "save": "وفّر 5.01 ر.س", "price": "24.99", "featured": false}, {"num": "9", "name": "كومبو التذوق", "items": "في 60 حار أو آيس + قهوة اليوم كبير", "save": "وفّر 4.01 ر.س", "price": "19.99", "featured": false}, {"num": "10", "name": "في 60 جمعة", "items": "3× في 60 حار أو آيس", "save": "وفّر 9.01 ر.س", "price": "35.99", "featured": false}, {"num": "11", "name": "لمة السبيشلتي 3×3", "items": "3× في 60 + 3× كوكيز فاخر", "save": "وفّر 14.01 ر.س", "price": "54.99", "featured": false}, {"num": "12", "name": "قهوة الدوام", "items": "4× قهوة اليوم كبير", "save": "وفّر 6.01 ر.س", "price": "29.99", "featured": false}, {"num": "13", "name": "قهوة اللمة الكبيرة", "items": "6× قهوة اليوم كبير", "save": "وفّر 10.01 ر.س", "price": "43.99", "featured": false}, {"num": "14", "name": "كومبو نص نص", "items": "2× في 60 + 2× قهوة اليوم كبير", "save": "وفّر 9.01 ر.س", "price": "38.99", "featured": false}]};
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const truthy = v => ["نعم","yes","y","1","true","صح","✓"].includes(
+  String(v || "").trim().toLowerCase());
+
+/* --- tiny RFC-4180 CSV parser: handles quotes, commas, newlines --- */
+function parseCSV(text){
+  const rows=[]; let row=[], cell="", q=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i];
+    if(q){
+      if(c==='"'){ if(text[i+1]==='"'){cell+='"';i++;} else q=false; }
+      else cell+=c;
+    } else if(c==='"') q=true;
+    else if(c===','){ row.push(cell); cell=""; }
+    else if(c==='\n'){ row.push(cell); rows.push(row); row=[]; cell=""; }
+    else if(c!=='\r') cell+=c;
+  }
+  if(cell!==""||row.length){ row.push(cell); rows.push(row); }
+  if(!rows.length) return [];
+  const head=rows[0].map(x=>x.trim());
+  return rows.slice(1).filter(r=>r.some(x=>x.trim()!=="")).map(r=>{
+    const o={}; head.forEach((k,i)=>o[k]=(r[i]||"").trim()); return o;
+  });
+}
+
+const SEC_BY_AR = {}; FALLBACK.sections.forEach(s=>{ SEC_BY_AR[s.ar]=s.id; SEC_BY_AR[s.id]=s.id; });
+
+/* --- sheet rows -> the same shape as FALLBACK --- */
+function shapeMenu(rows){
+  const byKey = new Map();
+  rows.forEach(r=>{
+    if(r["ظاهر"] && !truthy(r["ظاهر"])) return;
+    const sec = SEC_BY_AR[(r["القسم"]||"").trim()];
+    const ar  = (r["الصنف"]||"").trim();
+    if(!sec || !ar) return;
+    const k = sec+"|"+ar;
+    if(!byKey.has(k)) byKey.set(k, {sec, ar, en:(r["Item"]||"").trim(),
+      desc:(r["الوصف"]||"").trim(), img:(r["الصورة"]||"").trim(),
+      badge:({"الأكثر مبيعاً":"bestseller","جديد":"new"})[(r["شارة"]||"").trim()]||"",
+      prices:[]});
+    const amt=(r["السعر"]||"").trim();
+    if(amt) byKey.get(k).prices.push({size:(r["الحجم"]||"").trim().toUpperCase(), amt});
+  });
+  return [...byKey.values()].filter(i=>i.prices.length);
+}
+
+function shapeCombos(rows){
+  return rows.filter(r=>!(r["ظاهر"] && !truthy(r["ظاهر"])) && (r["الاسم"]||"").trim())
+    .map((r,i)=>({num:(r["رقم"]||String(i+1)).trim(), name:(r["الاسم"]||"").trim(),
+      items:(r["المكونات"]||"").trim(), save:(r["التوفير"]||"").trim(),
+      price:(r["السعر"]||"").trim(), featured:truthy(r["مميز"])}));
+}
+
+/* ------------------------------ rendering ------------------------------ */
+function priceHTML(prices){
+  if(prices.length===1 && !prices[0].size)
+    return '<div class="price-pill single"><span class="amt">'+esc(prices[0].amt)+
+           '</span><span class="sar">ر.س</span></div>';
+  return prices.map(p=>'<div class="price-pill"><span class="size">'+esc(p.size)+
+      '</span><span class="amt">'+esc(p.amt)+'</span><span class="sar">ر.س</span></div>').join("");
+}
+
+function itemHTML(it){
+  const cls = "product" + (it.badge==="bestseller" ? " bestseller"
+            : it.badge==="new" ? " newitem" : "") + (it.img ? "" : " noimg");
+  const img = it.img
+    ? '<div class="product-img" style="background-image:url(\''+IMG_BASE+encodeURIComponent(it.img)+'\')"></div>'
+    : '';
+  return '<div class="'+cls+'">'+img+
+    '<div class="product-info">'+
+      '<div class="product-name-ar">'+esc(it.ar)+'</div>'+
+      '<div class="product-name-en">'+esc(it.en)+'</div>'+
+      (it.desc ? '<div class="product-desc">'+esc(it.desc)+'</div>' : '')+
+      '<div class="product-price-row">'+priceHTML(it.prices)+'</div>'+
+    '</div></div>';
+}
+
+function comboHTML(c){
+  return '<div class="combo-card'+(c.featured?" featured":"")+'">'+
+    '<div class="combo-num">'+esc(c.num)+'</div>'+
+    '<div class="combo-desc"><div class="ar">'+esc(c.name)+'</div>'+
+      '<div class="items">'+esc(c.items)+'</div>'+
+      (c.save ? '<div class="save">'+esc(c.save)+'</div>' : '')+
+    '</div>'+
+    '<div class="combo-price"><span class="amt">'+esc(c.price)+
+      '</span><span class="sar">ر.س</span></div></div>';
+}
+
+function paint(items, combos){
+  document.querySelectorAll('.products[data-sec]').forEach(box=>{
+    const sec = box.getAttribute('data-sec');
+    box.innerHTML = items.filter(i=>i.sec===sec).map(itemHTML).join("");
+    const section = box.closest('section');
+    if(section) section.style.display = box.innerHTML ? "" : "none";
+  });
+  const cl = document.getElementById('comboList');
+  if(cl) cl.innerHTML = (combos||[]).map(comboHTML).join("");
+}
+
+async function boot(){
+  paint(FALLBACK.items, FALLBACK.combos);          // instant paint, never blank
+  if(!MENU_SHEET) return;
+  const url = id => "https://docs.google.com/spreadsheets/d/"+id+
+                    "/gviz/tq?tqx=out:csv&t="+Date.now();   // no gid = first tab
+  try{
+    const [m,c] = await Promise.all([fetch(url(MENU_SHEET)), fetch(url(COMBOS_SHEET))]);
+    if(!m.ok) throw new Error("menu "+m.status);
+    const items = shapeMenu(parseCSV(await m.text()));
+    if(items.length < 15) throw new Error("sheet returned only "+items.length+" items");
+    let combos = FALLBACK.combos;
+    if(c.ok){ const cc = shapeCombos(parseCSV(await c.text())); if(cc.length) combos = cc; }
+    paint(items, combos);
+  }catch(e){
+    console.warn("[menu] sheet unavailable, using built-in copy:", e.message);
+  }
+}
+boot();
+</script>
+
 </body>
 </html>
